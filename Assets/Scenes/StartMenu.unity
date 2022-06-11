@@ -304,7 +304,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -81.8}
-  m_SizeDelta: {x: 360.5, y: 100}
+  m_SizeDelta: {x: 398.31, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335835242
 MonoBehaviour:
@@ -328,11 +328,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3892544d56fb2ab43b00e28e3903d6c5, type: 3}
-    m_FontSize: 58
+    m_FontSize: 77
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 69
+    m_MaxSize: 85
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -477,8 +477,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 48.7}
-  m_SizeDelta: {x: 66.5935, y: 33.0131}
+  m_AnchoredPosition: {x: 0, y: 137.37}
+  m_SizeDelta: {x: 80, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259958722
 MonoBehaviour:
@@ -608,8 +608,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -6.98}
+  m_SizeDelta: {x: 220.47, y: 93.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1267878155
 MonoBehaviour:
@@ -633,7 +633,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -963,8 +963,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.25, y: -28.706696}
-  m_SizeDelta: {x: 180.3, y: 30}
+  m_AnchoredPosition: {x: 0.3922, y: -27.7778}
+  m_SizeDelta: {x: 176.5844, y: 31.8578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738171612
 MonoBehaviour:
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Username: 
+  bestScore: 0
 --- !u!4 &1967538779
 Transform:
   m_ObjectHideFlags: 0
@@ -1253,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

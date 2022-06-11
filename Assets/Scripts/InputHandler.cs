@@ -16,6 +16,7 @@ public class InputHandler : MonoBehaviour
 
     public void StartGame()
     {
+        GameManager.Instance.LoadGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
