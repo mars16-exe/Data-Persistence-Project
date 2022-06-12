@@ -11,7 +11,7 @@ public class InputHandler : MonoBehaviour
     
     public void AssignName()
     {
-        GameManager.Instance.Username = input.textComponent.text;
+        GameManager.Instance.currentPlayer = input.textComponent.text;
     }
 
     public void StartGame()

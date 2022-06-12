@@ -16,6 +16,7 @@ public class MainManager : MonoBehaviour
     
     private bool m_Started = false;
     private int m_Points;
+    public int currentScore;
     
     private bool m_GameOver = false;
 
@@ -23,7 +24,7 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        ScoreText.text = GameManager.Instance.Username + $" Score : {m_Points}";
+        ScoreText.text = GameManager.Instance.currentPlayer + $" Score : {m_Points}";
     }
 
     void Start()
@@ -46,6 +47,32 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
+        Movement();
+
+        currentScore = m_Points;
+        if (currentScore > GameManager.Instance.bestScore)
+        {
+            GameManager.Instance.bestScore = currentScore;
+            GameManager.Instance.SaveGame();
+        }
+
+
+    }
+
+    void AddPoint(int point)
+    {
+        m_Points += point;
+        ScoreText.text = GameManager.Instance.currentPlayer + $" Score : {m_Points}";
+    }
+
+    public void GameOver()
+    {
+        m_GameOver = true;
+        GameOverText.SetActive(true);
+    }
+
+    public void Movement()
+    {
         if (!m_Started)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -63,23 +90,9 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 GameManager.Instance.LoadGame();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
-    }
-
-    void AddPoint(int point)
-    {
-        m_Points += point;
-        ScoreText.text = GameManager.Instance.Username + $" Score : {m_Points}";
-        GameManager.Instance.SaveGame(m_Points);
-
-    }
-
-    public void GameOver()
-    {
-        m_GameOver = true;
-        GameOverText.SetActive(true);
     }
 }

@@ -10,38 +10,14 @@ public class GameManager : MonoBehaviour
 
     public string Username;
     public int bestScore;
+    public string currentPlayer;
 
     private string path;
 
     [Serializable] class SaveData
     {
-        public string Username;
+        public string currentBestplayer;
         public int currentBestScore;
-    }
-
-    public void SaveGame(int currentScore)
-    {
-        if(currentScore > bestScore)
-        {
-            SaveData data = new SaveData();
-            data.Username = Username;
-            data.currentBestScore = bestScore;
-
-            string json = JsonUtility.ToJson(data);
-            File.WriteAllText(path, json);
-        }
-    }
-
-    public void LoadGame()
-    {
-        if(File.Exists(path))
-        {
-            string json = File.ReadAllText(path);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
-
-            Username = data.Username;
-            bestScore = data.currentBestScore;
-        }
     }
 
     private void Awake()
@@ -56,5 +32,28 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+    }
+
+    public void SaveGame()
+    {
+            SaveData data = new SaveData();
+            data.currentBestplayer = currentPlayer;
+            data.currentBestScore = bestScore;
+
+            string json = JsonUtility.ToJson(data);
+            File.WriteAllText(path, json);
+    }
+
+    public void LoadGame()
+    {
+        if(File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            Username = data.currentBestplayer;
+            bestScore = data.currentBestScore;
+        }
     }
 }

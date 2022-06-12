@@ -14,6 +14,10 @@ public class BestScoreHandler : MonoBehaviour
         bestScoreText = GetComponent<Text>();
         bestScore = GameManager.Instance.bestScore;
         UserName = GameManager.Instance.Username;
+    }
+
+    private void Update()
+    {
         bestScoreText.text = "Best Score: " + UserName + " : " + bestScore;
     }
 }
